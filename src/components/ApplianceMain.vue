@@ -163,7 +163,6 @@ const Appliances = ref([]);
 provide("Appliances", Appliances);
 
 function openModal() {
-  console.log("Otwieram");
   document.body.classList.add("overflow-hidden");
   return (showModal.value = true);
 }
