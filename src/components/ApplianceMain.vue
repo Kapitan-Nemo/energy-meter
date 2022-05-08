@@ -137,7 +137,7 @@
               <div class="appliance__card__footer">
                 <p class="appliance__card__footer-title">
                   {{ (Appliance.cost * 30).toFixed(2) }}
-                  zł
+                  $
                   <small>Per month</small>
                 </p>
               </div>

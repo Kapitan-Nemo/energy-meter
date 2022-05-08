@@ -18,7 +18,7 @@
             <label class="modal__body-label">Per day:</label>
           </div>
           <div class="modal__body-item-wrapper">
-            <p class="modal__summary-badge">{{ costSummary.toFixed(2) }} zł</p>
+            <p class="modal__summary-badge">{{ costSummary.toFixed(2) }} $</p>
           </div>
         </div>
         <div class="modal__body-item modal__summary-item">
@@ -31,7 +31,7 @@
           </div>
           <div class="modal__body-item-wrapper">
             <p class="modal__summary-badge">
-              {{ (costSummary * 30).toFixed(2) }} zł
+              {{ (costSummary * 30).toFixed(2) }} $
             </p>
           </div>
         </div>
@@ -45,7 +45,7 @@
           </div>
           <div class="modal__body-item-wrapper">
             <p class="modal__summary-badge">
-              {{ (costSummary * 365).toFixed(2) }} zł
+              {{ (costSummary * 365).toFixed(2) }} $
             </p>
           </div>
         </div>
