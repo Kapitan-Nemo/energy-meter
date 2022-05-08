@@ -1,0 +1,14 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(@/fonts/Montserrat-VF.woff2) format('woff2-variations');
+    font-style: normal;
+    font-display: swap;
+  }  
+  @keyframes Looper {
+    from {
+        font-variation-settings: "wght" 900;
+    }
+    to {
+        font-variation-settings: "wght" 100;
+    }
+  }
