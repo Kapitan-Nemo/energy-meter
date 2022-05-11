@@ -113,6 +113,7 @@ import ApplianceForm from "./Modal/ModalTemplate.vue";
 
 let id = 0;
 const Appliances = inject("Appliances");
+const showModal = inject("showModal");
 const newWattage = ref("");
 const newTime = ref("");
 const newDevice = ref("");
@@ -142,7 +143,8 @@ function submitForm(e) {
     return (showModalError.value = true);
   } else {
     addAppliance();
-    return (showModalError.value = false);
+    document.body.classList.remove("overflow-hidden");
+    return (showModalError.value = false), (showModal.value = false);
   }
 }
 </script>

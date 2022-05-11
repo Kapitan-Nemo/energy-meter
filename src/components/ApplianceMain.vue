@@ -161,6 +161,7 @@ const showEditOptions = ref(false);
 const Appliances = ref([]);
 
 provide("Appliances", Appliances);
+provide("showModal", showModal);
 
 function openModal() {
   document.body.classList.add("overflow-hidden");
