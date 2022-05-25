@@ -10,18 +10,6 @@
     </template>
     <template v-slot:body>
       <transition>
-        <div class="modal__error" v-if="newTime > 24">
-          <span class="modal__error-wrapper">
-            <img
-              class="modal__error-icon"
-              src="@/assets/svg/controls/warning.svg"
-            />
-            Error!
-          </span>
-          <p class="modal__error-text">Max used per day is 24h</p>
-        </div>
-      </transition>
-      <transition>
         <div class="modal__error" v-if="showModalError">
           <span class="modal__error-wrapper">
             <img
@@ -34,6 +22,20 @@
           <p class="modal__error-text">Please complete all fields.</p>
         </div>
       </transition>
+      <transition>
+        <div class="modal__error" v-if="newTime > 24">
+          <span class="modal__error-wrapper">
+            <img
+              class="modal__error-icon"
+              src="@/assets/svg/controls/warning.svg"
+            />
+            Error!
+          </span>
+
+          <p class="modal__error-text">Max used per day is 24h</p>
+        </div>
+      </transition>
+
       <form>
         <div class="modal__body">
           <div class="modal__body-item">
@@ -52,50 +54,54 @@
               <option>Other</option>
             </select>
           </div>
-          <div class="modal__body-item">
-            <div class="modal__body-item-wrapper">
-              <img
-                class="modal__body-icon"
-                src="@/assets/svg/controls/wattage.svg"
-              />
-              <label class="modal__body-label">Wattage:</label>
+          <div class="modal__body-items-mobile">
+            <div class="modal__body-item modal__body-item-mobile">
+              <div class="modal__body-item-wrapper">
+                <img
+                  class="modal__body-icon"
+                  src="@/assets/svg/controls/wattage.svg"
+                />
+                <label class="modal__body-label">Wattage:</label>
+              </div>
+              <div class="modal__body-item-wrapper">
+                <input
+                  type="number"
+                  inputmode="decimal"
+                  v-model="newWattage"
+                  class="modal__body-input"
+                />
+                <input
+                  class="modal__body-input-placeholder"
+                  type="text"
+                  value="W"
+                  disabled
+                />
+              </div>
             </div>
-            <div class="modal__body-item-wrapper">
-              <input
-                type="number"
-                inputmode="decimal"
-                v-model="newWattage"
-                class="modal__body-input"
-              />
-              <input
-                class="modal__body-input-placeholder"
-                type="text"
-                value="W"
-                disabled
-              />
-            </div>
-          </div>
-          <div class="modal__body-item">
-            <div class="modal__body-item-wrapper">
-              <img
-                class="modal__body-icon"
-                src="@/assets/svg/controls/time.svg"
-              />
-              <label class="modal__body-label">Used per day:</label>
-            </div>
-            <div class="modal__body-item-wrapper">
-              <input
-                type="number"
-                inputmode="decimal"
-                class="modal__body-input"
-                v-model="newTime"
-              />
-              <input
-                class="modal__body-input-placeholder"
-                type="text"
-                value="h"
-                disabled
-              />
+            <div class="modal__body-item modal__body-item-mobile">
+              <div class="modal__body-item-wrapper">
+                <img
+                  class="modal__body-icon"
+                  src="@/assets/svg/controls/time.svg"
+                />
+                <label class="modal__body-label">Used per day:</label>
+              </div>
+              <div
+                class="modal__body-item-wrapper modal__body-item-wrapper-mobile"
+              >
+                <input
+                  type="number"
+                  inputmode="decimal"
+                  class="modal__body-input"
+                  v-model="newTime"
+                />
+                <input
+                  class="modal__body-input-placeholder"
+                  type="text"
+                  value="h"
+                  disabled
+                />
+              </div>
             </div>
           </div>
         </div>

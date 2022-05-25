@@ -36,16 +36,23 @@
       width: 90%;
     }
   }
+
   &__error {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    width: 380px;
+    justify-content: space-between;
+    align-items: center;
     background: #ffce79;
     padding: 13px 25px 13px 25px;
-    margin: 25px 25px 0px 25px;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     @include max-lg {
-      margin: 25px 15px 0px 15px;
+      width: 300px;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      bottom: 0;
     }
     &-wrapper {
       display: flex;
@@ -75,6 +82,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 85px;
+    @include max-lg {
+      height: 50px;
+      font-size: 18px;
+    }
     &-close {
       cursor: pointer;
       width: 38px;
@@ -89,6 +101,14 @@
         height: 38px;
         padding: 5px;
       }
+      @include max-lg {
+        width: 25px;
+        height: 25px;
+        &:hover {
+          width: 25px;
+          height: 25px;
+        }
+      }
     }
   }
   &__body {
@@ -102,7 +122,7 @@
       align-items: center;
       margin: 0 0 50px 0;
       @include max-lg {
-        margin: 0 0 50px 0;
+        margin: 0 0 30px 0;
       }
       &:last-of-type {
         margin: 0;
@@ -110,6 +130,25 @@
       &-wrapper {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+      }
+      &-wrapper-mobile {
+        @include max-lg {
+          justify-content: flex-end;
+        }
+      }
+    }
+    &-items-mobile {
+      @include max-lg {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    &-item-mobile {
+      @include max-lg {
+        display: block;
+        justify-content: flex-end;
+        margin: 0;
       }
     }
     &-input {
@@ -122,8 +161,9 @@
       color: $primary;
       transition: 0.5s ease;
       @include max-lg {
-        font-size: 16px;
+        font-size: 14px;
         max-width: 100px;
+        margin: 15px 0 0 0;
       }
       &-placeholder {
         background: none;
@@ -135,7 +175,8 @@
         color: $primary;
         transition: 0.5s ease;
         @include max-lg {
-          font-size: 16px;
+          font-size: 14px;
+          margin: 15px 0 0 0;
         }
       }
     }
@@ -161,7 +202,7 @@
     &-label {
       font-size: 20px;
       @include max-lg {
-        font-size: 14px;
+        font-size: 10px;
       }
     }
   }
@@ -173,7 +214,8 @@
     align-items: center;
     border-radius: 0 0 30px 30px;
     @include max-lg {
-      height: 68px;
+      height: 50px;
+      font-size: 18px;
     }
     &-button {
       font-size: 30px;
@@ -185,7 +227,7 @@
       cursor: pointer;
       font-variation-settings: "wght" 400;
       @include max-lg {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
   }
@@ -194,7 +236,7 @@
     margin: 0;
     font-variation-settings: "wght" 400;
     @include max-lg {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 }

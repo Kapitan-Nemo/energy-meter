@@ -75,18 +75,22 @@
                   {{ Appliance.device }}
                 </p>
                 <img
+                  class="appliance__card__header-image"
                   src="@/assets/svg/devices/tv.svg"
                   v-if="Appliance.device == 'TV'"
                 />
                 <img
+                  class="appliance__card__header-image"
                   src="@/assets/svg/devices/washing-machine.svg"
                   v-if="Appliance.device == 'Washing machine'"
                 />
                 <img
+                  class="appliance__card__header-image"
                   src="@/assets/svg/devices/fridge.svg"
                   v-if="Appliance.device == 'Fridge'"
                 />
                 <img
+                  class="appliance__card__header-image"
                   src="@/assets/svg/devices/other.svg"
                   v-if="Appliance.device == 'Other'"
                 />
@@ -368,9 +372,21 @@ onMounted(() => {
       height: 85px;
       border-radius: 30px 30px 0 0;
       padding: 25px;
+      @include max-lg {
+        height: 70px;
+      }
       &-title {
         font-size: 30px;
         font-variation-settings: "wght" 400;
+        @include max-lg {
+          font-size: 20px;
+        }
+      }
+      &-image {
+        @include max-sm {
+          width: 40px;
+          max-height: 50px;
+        }
       }
     }
     &__body {
@@ -383,11 +399,20 @@ onMounted(() => {
         align-items: center;
         justify-content: space-between;
         padding: 50px 0 50px 0;
+        @include max-lg {
+          padding: 25px 0 0px 0;
+        }
         &:first-of-type {
           padding: 50px 0 0 0;
+          @include max-lg {
+            padding: 25px 0 0px 0;
+          }
         }
         &:last-of-type {
           padding: 0 0 50px 0;
+          @include max-lg {
+            padding: 25px 0 25px 0;
+          }
         }
       }
       &-title {
@@ -414,7 +439,9 @@ onMounted(() => {
         border-radius: 10px;
         padding: 0 15px 0 15px;
         @include max-lg {
-          font-size: 16px;
+          font-size: 14px;
+          min-width: 65px;
+          min-height: 30px;
           text-align: center;
         }
       }
@@ -427,6 +454,9 @@ onMounted(() => {
       height: 85px;
       border-radius: 0 0 30px 30px;
       padding: 25px;
+      @include max-lg {
+        height: 70px;
+      }
       &-title {
         font-size: 30px;
         font-variation-settings: "wght" 400;
@@ -434,6 +464,9 @@ onMounted(() => {
         display: flex;
         flex-flow: column;
         align-items: center;
+        @include max-lg {
+          font-size: 20px;
+        }
         small {
           font-size: 10px;
         }

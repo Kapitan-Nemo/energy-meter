@@ -71,11 +71,11 @@ const costSummary = computed(() => {
 });
 </script>
 
-<sctyle lang="scss">
+<style lang="scss">
 .modal {
   &__summary {
     &-body {
-      padding: 25px 25px 50px 25px;
+      padding: 25px 25px 25px 25px;
     }
     &-item {
       margin: 0 0 30px 0;
@@ -107,4 +107,4 @@ const costSummary = computed(() => {
     }
   }
 }
-</sctyle>
+</style>
