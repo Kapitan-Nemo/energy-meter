@@ -114,7 +114,7 @@
 </template>
 
 <script setup>
-import { ref, inject } from "vue";
+import { ref, inject, watch } from "vue";
 import ApplianceForm from "./Modal/ModalTemplate.vue";
 
 let id = 0;
@@ -138,6 +138,12 @@ function addAppliance() {
   newDevice.value = "";
 }
 
+watch(newTime, () => {
+  if (newTime.value > 24) {
+    setTimeout(() => (newTime.value = 24), 2000);
+  }
+});
+
 function submitForm(e) {
   e.preventDefault();
   if (
@@ -146,6 +152,7 @@ function submitForm(e) {
     newTime.value > 24 ||
     newDevice.value == ""
   ) {
+    setTimeout(() => (showModalError.value = false), 2000);
     return (showModalError.value = true);
   } else {
     addAppliance();
