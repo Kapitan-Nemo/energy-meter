@@ -18,7 +18,12 @@
           Whoops! You haven’t added any<br />
           appliances yet.
         </h2>
-        <img class="hero__empty-image" src="@/assets/svg/hero/empty.svg" />
+        <img
+          width="200"
+          height="200"
+          class="hero__empty-image"
+          src="@/assets/svg/hero/empty.svg"
+        />
       </div>
     </section>
 
@@ -33,17 +38,29 @@
               class="appliance__button-summary"
             >
               <span class="appliance__button-summary-wrap"
-                >Summary <img src="@/assets/svg/buttons/summary.svg"
+                >Summary
+                <img
+                  width="26"
+                  height="36"
+                  src="@/assets/svg/buttons/summary.svg"
               /></span>
             </button>
             <button @click="showEdit" class="appliance__button-setting">
               <span
                 class="appliance__button-setting-wrap"
                 v-if="showEditOptions"
-                >Hide options <img src="@/assets/svg/buttons/settings.svg"
+                >Hide options
+                <img
+                  src="@/assets/svg/buttons/settings.svg"
+                  width="40"
+                  height="40"
               /></span>
               <span class="appliance__button-setting-wrap" v-else
-                >Show options <img src="@/assets/svg/buttons/settings.svg"
+                >Show options
+                <img
+                  src="@/assets/svg/buttons/settings.svg"
+                  width="40"
+                  height="40"
               /></span>
             </button>
           </div>
@@ -78,21 +95,29 @@
                   class="appliance__card__header-image"
                   src="@/assets/svg/devices/tv.svg"
                   v-if="Appliance.device == 'TV'"
+                  width="64"
+                  height="50"
                 />
                 <img
                   class="appliance__card__header-image"
                   src="@/assets/svg/devices/washing-machine.svg"
                   v-if="Appliance.device == 'Washing machine'"
+                  width="51"
+                  height="61"
                 />
                 <img
                   class="appliance__card__header-image"
                   src="@/assets/svg/devices/fridge.svg"
                   v-if="Appliance.device == 'Fridge'"
+                  width="38"
+                  height="56"
                 />
                 <img
                   class="appliance__card__header-image"
                   src="@/assets/svg/devices/other.svg"
                   v-if="Appliance.device == 'Other'"
+                  width="33"
+                  height="54"
                 />
               </div>
               <div class="appliance__card__body">
@@ -101,6 +126,8 @@
                     <img
                       class="modal__body-icon"
                       src="@/assets/svg/controls/wattage.svg"
+                      width="30"
+                      height="30"
                     />
                     <p class="appliance__card__body-title">Wattage:</p>
                   </div>
@@ -113,6 +140,8 @@
                     <img
                       class="modal__body-icon"
                       src="@/assets/svg/controls/time.svg"
+                      width="30"
+                      height="30"
                     />
                     <p class="appliance__card__body-title">Used per day:</p>
                   </div>
@@ -125,6 +154,8 @@
                     <img
                       class="modal__body-icon"
                       src="@/assets/svg/controls/power.svg"
+                      width="30"
+                      height="30"
                     />
                     <p class="appliance__card__body-title">
                       Power consumption:
